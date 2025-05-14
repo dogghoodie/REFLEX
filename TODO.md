@@ -4,3 +4,4 @@
 - [ ] colors
 - [ ] speed meter
 - [ ] OOP
+- [ ] save scores
