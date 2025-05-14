@@ -91,17 +91,24 @@ int main(int argc, char *argv[]) {
 
   while (true) {
     reflex(win, TIME);
-    mvwprintw(win, 1, 2, "%s", spaces.c_str());
-    mvwprintw(win, 3, 2, "Continue? y/n");
-    wrefresh(win);
-    char input = wgetch(win);
-    if (input == 'y') {
+    while (true) {
       mvwprintw(win, 1, 2, "%s", spaces.c_str());
-      mvwprintw(win, 2, 2, "%s", spaces.c_str());
-      mvwprintw(win, 3, 2, "%s", spaces.c_str());
-      continue;
-    } else {
-      break;
+      mvwprintw(win, 3, 2, "Continue? y/n");
+      wrefresh(win);
+      char input = wgetch(win);
+      if (input == 'y') {
+        mvwprintw(win, 1, 2, "%s", spaces.c_str());
+        mvwprintw(win, 2, 2, "%s", spaces.c_str());
+        mvwprintw(win, 3, 2, "%s", spaces.c_str());
+        wrefresh(win);
+        napms(500);
+        break;
+      } else if (input == 'n') {
+        endwin();
+        exit(0);
+      } else {
+        wrefresh(win);
+      }
     }
   }
 
