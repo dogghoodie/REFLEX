@@ -1,6 +1,7 @@
 package gui
 
 import (
+	// "REFLEX/pkg/game"
 	"log"
 
 	"github.com/jroimartin/gocui"
@@ -26,6 +27,8 @@ func InitializeReflexView(g *gocui.Gui) error {
 		}
 		reflex.Title = ">>TARGET"
 		reflex.Write([]byte("  .X"))
+		reflex.Autoscroll = true
+		reflex.Wrap = true
 	}
 
 	return nil
@@ -76,6 +79,14 @@ func ViewManager(g *gocui.Gui) error {
 	InitializeTimeView(g)
 	InitializeKeybinds(g)
 	SetMainView(g)
+
+	/*
+		if reflexView, err := g.View("reflex"); err == nil {
+			game.Start(g, reflexView)
+		} else {
+			log.Panicln("Error getting reflex view: ", err)
+		}
+	*/
 
 	return nil
 }
