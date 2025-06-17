@@ -1,7 +1,6 @@
 # TODO
 
-- [ ] numbers
+- [ ] OOP
 - [ ] colors
 - [ ] speed meter
-- [ ] OOP
 - [ ] save scores
